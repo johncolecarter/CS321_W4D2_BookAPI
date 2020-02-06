@@ -18,5 +18,6 @@ namespace CS321_W4D2_BookAPI.Core.Services
         // list
         IEnumerable<Book> GetAll();
         IEnumerable<Book> GetBooksForAuthor(int id);
+        IEnumerable<Book> GetBooksForPublishers(int id);
     }
 }

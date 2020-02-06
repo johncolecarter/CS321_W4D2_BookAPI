@@ -39,6 +39,11 @@ namespace CS321_W4D2_BookAPI.Core.Services
             return _bookRepo.GetBooksForAuthor(authorId);
         }
 
+        public IEnumerable<Book> GetBooksForPublishers(int publisherId)
+        {
+            return _bookRepo.GetBooksForPublishers(publisherId);
+        }
+
         public Book Update(Book updatedBook)
         {
             // update the todo and save

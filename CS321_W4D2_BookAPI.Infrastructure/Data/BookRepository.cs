@@ -48,6 +48,16 @@ namespace CS321_W4D2_BookAPI.Infrastructure.Data
                 .ToList();
         }
 
+        public IEnumerable<Book> GetBooksForPublishers(int publisherId)
+        {
+            return _bookContext.Books
+                .Include(p => p.Author)
+                .Include(p => p.AuthorId)
+                .Include(p => p.Publisher)
+                .Where(p => p.PublisherId == publisherId)
+                .ToList();
+        }
+
         public Book Update(Book updatedBook)
         {
             // get the ToDo object in the current list with this id 
